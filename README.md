@@ -83,3 +83,5 @@ Finally, Snell's law is applied at the channel wall interface and the terminal p
 \begin{equation}
     r_f = r_3 - t \tan(\theta_3')
 \end{equation}
+
+## References
