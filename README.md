@@ -85,3 +85,19 @@ Finally, Snell's law is applied at the channel wall interface and the terminal p
 \end{equation}
 
 ## References
+
+Allan, D. B., Caswell, T., Keim, N. C., van der Wel, C. M. & Verweij, R. W. 2021129 soft-matter/trackpy: Trackpy v0.5.0.
+
+Bradski, G. 2000 The OpenCV Library. Dr. Dobb’s Journal of Software Tools.
+
+Crocker, J. C. & Grier, D. G. 1996 Methods of digital video microscopy for colloidal studies. Journal of Colloid and Interface Science 179 (1), 298–310.
+
+Hecht, E. 2012 Optics. Pearson.
+
+Johnson, S. G. 2021 The NLopt nonlinear-optimization package.
+
+Nelder, J. A. & Mead, R. 1965 A Simplex Method for Function Minimization. The Computer Journal 7(4), 308–313.
+
+Vincent, L. 1993 Morphological grayscale reconstruction in image analysis: applications and efficient algorithms. IEEE Transactions on Image Processing 2 (2), 176–201.
+
+Zivkovic, Z. 2004 Improved adaptive Gaussian mixture model for background subtraction. In Proceedings of the 17th International Conference on Pattern Recognition, 2004, vol. 2, pp. 28–31
