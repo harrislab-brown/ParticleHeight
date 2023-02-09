@@ -9,7 +9,7 @@ Refraction-based single-camera 3D particle tracking
 
 ## 3D tracking details
 <p align="center">
-    <img src="processing.png" width="40%" height="40%" />
+    <img src="processing.png" width="70%" height="70%" />
 </p>
 Prior to each experiment, a reference image of the speckle pattern is captured without any particles in front of it. Then, throughout the experiment, a series of photographs of the test section with particles are captured at a rate of 1 Hz. In order to extract useful information from the particle images, a number of pre-processing steps are required which are outlined in figure \ref{fig:processing}(a). First, background subtraction is performed using a Gaussian mixture-based segmentation algorithm \citep{zivkovic04} which applies a filter and subtracts the reference image pixel intensities from the particle image pixel intensities. Morphological opening is used to merge each particle into one connected region and the morphological closing operation removes noise from the image. 
 
