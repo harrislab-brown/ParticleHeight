@@ -34,60 +34,56 @@ The final data processing step is to link the 3D particle positions into traject
 <p align="center">
     <img src="refraction.png" width="40%" height="40%" />
 </p>
+
 In order to simulate the distortion of the pattern when it is imaged through a particle, it is necessary to understand the path taken by the incident ray originating from the camera. Given a particle with center height $h$ above the pattern and an incident ray with distance $r_i$ from the particle center axis, the goal is to determine the position $r_f$ where the ray terminates on the pattern surface. The indices of refraction of the suspending liquid, particle and channel wall glass are given by $\eta_l$, $\eta_p$ and $\eta_g$ respectively. Since the camera is placed at a large working distance, the incident rays are assumed to be parallel and the top channel wall can be omitted from the analysis.
 
 The angle at the first ray intersection with an optical interface is given by
-\begin{equation}
-    \theta_1 = \sin^{-1}\left(\frac{r_i}{a}\right)
-\end{equation}
+
+$$\theta_1 = \sin^{-1}\left(\frac{r_i}{a}\right)$$
+
 Snell's law is then used to determine the angle of the refracted ray
-\begin{equation}
-    \eta_l \sin(\theta_1) = \eta_p \sin(\theta_1') \rightarrow \theta_1' = \sin^{-1}\left(\frac{\eta_l r_i}{\eta_p a}\right)
-\end{equation}
+
+$$\eta_l \sin(\theta_1) = \eta_p \sin(\theta_1') \rightarrow \theta_1' = \sin^{-1}\left(\frac{\eta_l r_i}{\eta_p a}\right)$$
+
 The vertical position of the first intersection is
-\begin{equation}
-    z_1 = \sqrt{a^2 - r_i^2} + h
-\end{equation}
+
+$$z_1 = \sqrt{a^2 - r_i^2} + h$$
+
 The second ray intersection must lie on the circle in the direction of the refracted ray so its position is constrained by the equations
-\begin{equation}
-a^2 = r_2^2 + (z_2-h)^2
-\end{equation}
-\begin{equation}
-    \tan(\theta_1 - \theta_1') = \frac{r_i - r_2}{z_1 - z_2}
-\end{equation}
+
+$$a^2 = r_2^2 + (z_2-h)^2$$
+
+$$\tan(\theta_1 - \theta_1') = \frac{r_i - r_2}{z_1 - z_2}$$
+
 The position of the second ray intersection with an optical interface is found by solving this system for $r_2$ and $z_2$.
-\begin{equation}
-    r_2 = \frac{r_i + h \tau - z_1 \tau - \tau \sqrt{a^2 \tau^2 - h^2 \tau^2 - z_1^2 \tau^2 - r_i^2 + a^2 - 2 h r_i \tau + 2 r_i z \tau + 2 h z_1 \tau^2}} {\tau^2 + 1}
-\end{equation}
-\begin{equation}
-    z_2 = \frac{h + z_1 \tau^2 - r_i \tau - \sqrt{a^2 \tau^2 - h^2 \tau^2 - z_1^2 \tau^2 - r_i^2 + a^2 - 2 h r_i \tau + 2 r_i z_1 \tau + 2 h z_1 \tau^2}}{\tau^2 + 1}
-\end{equation}
-\begin{equation}
-    \tau = \tan(\theta_1 - \theta_1')
-\end{equation}
+
+$$r_2 = \frac{r_i + h \tau - z_1 \tau - \tau \sqrt{a^2 \tau^2 - h^2 \tau^2 - z_1^2 \tau^2 - r_i^2 + a^2 - 2 h r_i \tau + 2 r_i z \tau + 2 h z_1 \tau^2}}{\tau^2 + 1}$$
+
+$$z_2 = \frac{h + z_1 \tau^2 - r_i \tau - \sqrt{a^2 \tau^2 - h^2 \tau^2 - z_1^2 \tau^2 - r_i^2 + a^2 - 2 h r_i \tau + 2 r_i z_1 \tau + 2 h z_1 \tau^2}}{\tau^2 + 1}$$
+
+$$\tau = \tan(\theta_1 - \theta_1')$$
+
 Now the angle of the second ray intersection may be written as
-\begin{equation}
-    \theta_2 = \sin^{-1}\left(\frac{r_i}{a}\right) - \sin^{-1}\left(\frac{\eta_l r_i}{\eta_p a}\right) + \sin^{-1}\left(\frac{r_2}{a}\right)
-\end{equation}
+
+$$\theta_2 = \sin^{-1}\left(\frac{r_i}{a}\right) - \sin^{-1}\left(\frac{\eta_l r_i}{\eta_p a}\right) + \sin^{-1}\left(\frac{r_2}{a}\right)$$
+
 and the angle of the refracted ray may again be determined using Snell's law.
-\begin{equation}
-    \eta_p \sin(\theta_2) = \eta_l \sin(\theta_2') \rightarrow \theta_2' = \sin^{-1}\left[\frac{\eta_p}{\eta_l} \sin \left[ \sin^{-1}\left(\frac{r_i}{a}\right) - \sin^{-1}\left(\frac{\eta_l r_i}{\eta_p a}\right) + \sin^{-1}\left(\frac{r_2}{a}\right) \right] \right]
-\end{equation}
+
+$$\eta_p \sin(\theta_2) = \eta_l \sin(\theta_2') \rightarrow \theta_2' = \sin^{-1}\left[\frac{\eta_p}{\eta_l} \sin \left[ \sin^{-1}\left(\frac{r_i}{a}\right) - \sin^{-1}\left(\frac{\eta_l r_i}{\eta_p a}\right) + \sin^{-1}\left(\frac{r_2}{a}\right) \right] \right]$$
+
 The angle at the final optical interface is 
-\begin{equation}
-    \theta_3 = \theta_2' - \theta_2 + \theta_1 - \theta_1'
-\end{equation}
+
+$$\theta_3 = \theta_2' - \theta_2 + \theta_1 - \theta_1'$$
+
 and the position of the ray intersection with the bottom channel wall is given by
-\begin{equation}
-    r_3 = r_2 - (z_2 - t) \tan\left(\theta_3\right)
-\end{equation}
+
+$$r_3 = r_2 - (z_2 - t) \tan\left(\theta_3\right)$$
+
 Finally, Snell's law is applied at the channel wall interface and the terminal position of the ray on the pattern $r_f$ is determined.
-\begin{equation}
-    \eta_l \sin(\theta_3) = \eta_g \sin(\theta_3') \rightarrow \theta_3' = \sin^{-1}\left(\frac{\eta_l}{\eta_g} \sin(\theta_3)\right)
-\end{equation}
-\begin{equation}
-    r_f = r_3 - t \tan(\theta_3')
-\end{equation}
+
+$$\eta_l \sin(\theta_3) = \eta_g \sin(\theta_3') \rightarrow \theta_3' = \sin^{-1}\left(\frac{\eta_l}{\eta_g} \sin(\theta_3)\right)$$
+
+$$r_f = r_3 - t \tan(\theta_3')$$
 
 ## References
 
