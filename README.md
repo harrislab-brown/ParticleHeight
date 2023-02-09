@@ -8,7 +8,9 @@ Refraction-based single-camera 3D particle tracking
 ## Usage
 
 ## 3D tracking details
-
+<p align="center">
+    <img src="processing.png" width="40%" height="40%" />
+</p>
 Prior to each experiment, a reference image of the speckle pattern is captured without any particles in front of it. Then, throughout the experiment, a series of photographs of the test section with particles are captured at a rate of 1 Hz. In order to extract useful information from the particle images, a number of pre-processing steps are required which are outlined in figure \ref{fig:processing}(a). First, background subtraction is performed using a Gaussian mixture-based segmentation algorithm \citep{zivkovic04} which applies a filter and subtracts the reference image pixel intensities from the particle image pixel intensities. Morphological opening is used to merge each particle into one connected region and the morphological closing operation removes noise from the image. 
 
 The result is convenient for measuring the local particle area fraction $\phi$ since it is a binary image where the white pixels are particles and the black pixels are the suspending fluid. However, in order to examine the suspension dynamics with greater detail, the position of each particle needs to be determined as a function of time. As a first step towards 3D particle tracking, two components of each particle's position can determined from the Euclidean distance transform which labels the distance from each white pixel to the nearest black pixel. The 2D particle positions are taken as the regional maxima of the distance transform after the h-maxima transform \citep{vincent93} is applied to suppress shallow maxima and avoid over-segmentation.
@@ -28,7 +30,9 @@ The tracking method requires calibration in order to precisely determine the ref
 The final data processing step is to link the 3D particle positions into trajectories so that each particle can be tracked throughout multiple frames of the experiment. The implementation of Crocker and Grier's algorithm \citep{crocker96} in the open-source library TrackPy \citep{trackpy} is used to link particle trajectories. This library includes a ballistic prediction framework which is particularly suited for tracking particles in non-Brownian flows. When using the library with prediction, the algorithm predicts the expected location of each particle based on its last known velocity and looks for particles within a defined search radius of that expected position. Each particle position is linked with one in the previous frame such that the total distance between the actual particles and their predicted positions is minimized. The code is also robust to particles that enter or exit the field of view though of course only particles that remain in the field of view can be tracked for the entire experiment. Examples of reconstructed 3D particle trajectories are shown in the ``tracking" frame of figure \ref{fig:processing}(a).
 
 ## Analytical refraction model
-![refraction](./refraction.png)
+<p align="center">
+    <img src="refraction.png" width="40%" height="40%" />
+</p>
 In order to simulate the distortion of the pattern when it is imaged through a particle, it is necessary to understand the path taken by the incident ray originating from the camera. Given a particle with center height $h$ above the pattern and an incident ray with distance $r_i$ from the particle center axis, the goal is to determine the position $r_f$ where the ray terminates on the pattern surface. The indices of refraction of the suspending liquid, particle and channel wall glass are given by $\eta_l$, $\eta_p$ and $\eta_g$ respectively. Since the camera is placed at a large working distance, the incident rays are assumed to be parallel and the top channel wall can be omitted from the analysis.
 
 The angle at the first ray intersection with an optical interface is given by
