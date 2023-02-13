@@ -21,12 +21,18 @@ The help mode simply prints the usage message. The message is also printed if th
 
 The OpenCV GUI is used to interactively configure the image processing settings. The number of video frames to be displayed for setup can be optionally set after the "-s" flag. A video file and a text file to save the settings must be specified. A window will open to display the video frame which can be resized with the 'w'/'s' keys. The 'a' and 'd' keys can be used to traverse the video frames. The following keys can be used to toggle the various processing steps on or off: 
 
-'b' - background subtraction 
-'n' - noise filtering 
-'m' - morphological operations 
-'c' - circle detection 
-'f' - particle height finding 
-'r' - switch between analytical or numerical refraction model for single particles 
+'b' - background subtraction
+
+'n' - noise filtering
+
+'m' - morphological operations
+
+'c' - circle detection
+
+'f' - particle height finding
+
+'r' - switch between analytical or numerical refraction model for single particles
+
 'h' - switch between Hough Circle Transform or Euclidean Distance Transform to find circles 
 
 Another window will open with sliders for adjusting the processing parameters. If the specified settings text file already exists and is valid, it will be loaded and used for the default slider positions. Once the parameters have been adjusted as desired, pressing 'q' will close the GUI windows and give the option to save the settings. The name/value pairs in the settings file can also be adjusted manually if desired.
