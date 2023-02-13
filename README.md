@@ -7,6 +7,8 @@ Refraction-based single-camera 3D particle tracking
 
 The ParticleHeight refraction-based 3D particle tracking code is installed using the cross-platform build system [CMake](https://cmake.org/). The dependencies are the [OpenCV](https://opencv.org/) and [NLopt](https://nlopt.readthedocs.io/en/latest/) libraries.
 
+The trajectories are then identified using the Python linking script which utilizes the [Trackpy](http://soft-matter.github.io/trackpy/v0.5.0/) library.
+
 ## Usage
 
 The application is run from the command line with flags to dictate the operating mode and file paths given for the input and output files. To run, open a command prompt (Windows) or a terminal (Mac) and "cd" to the directory containing the executable. Then start the program with "./ParticleHeight" followed by arguments. The first argument is a required flag specifying the operation mode to be either help, setup, calibration or processing ("-h", "-s", "-c" or "-p"). A video file (8-bit grayscale .avi) is also required where the first frame is the reference image. When analyzing the videos from a new experiment, the commands should be used in roughly the following order:
