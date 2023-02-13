@@ -2,6 +2,9 @@
 Refraction-based single-camera 3D particle tracking
 
 ## Introduction
+This code complements the article at (ADD LINK). It is used to reconstruct the 3D positions of transparent spherical particles suspended in a channel flow based on images of these particles with a speckle pattern in the background. The optical distortion of the pattern as it is imaged through the particles essentially encodes the out-of-plane particle position and enables 3D tracking with only a single camera.
+
+Data sets of the particle trajectories associated with the experiments in the paper are also provided. Each row contains the frame number, position (in mm, following the coordinate system in the paper), position confidence value (based on the cross-correlation with higher values indicating a closer match) and particle ID which links the trajectory between frames.
 
 ## Installation
 
@@ -43,7 +46,7 @@ Next we use calibration mode to calibrate the refraction indices of the various 
 
 **Process - e.g. "./ParticleHeight -p videos/videoFile.avi settings/settingsFile.txt output/results.csv output/resultVideo.avi"**
 
-Finally, we can process all the frames of the video using our adjusted settings and save the particle positions to a csv file. There is also the option to save a binarized video in order to visualize the particles.
+Finally, we can process all the frames of the video using our adjusted settings and save the particle positions to a csv file. There is also the option to save a binarized video in order to visualize the particles. At this point, the particle trajectories may be identified using the Python linking script, which will add an additional column of particle IDs to the csv file produced by the ParticleHeight code.
 
 ## 3D tracking details
 <p align="center">
