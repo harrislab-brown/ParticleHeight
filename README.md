@@ -14,7 +14,7 @@ The trajectories are then identified using the Python linking script which utili
 
 ## Usage
 
-The application is run from the command line with flags to dictate the operating mode and file paths given for the input and output files. To run, open a command prompt (Windows) or a terminal (Mac) and "cd" to the directory containing the executable. Then start the program with "./ParticleHeight" followed by arguments. The first argument is a required flag specifying the operation mode to be either help, setup, calibration or processing ("-h", "-s", "-c" or "-p"). A video file (8-bit grayscale .avi) is also required where the first frame is the reference image. When analyzing the videos from a new experiment, the commands should be used in roughly the following order:
+The application is run from the command line with flags to dictate the operating mode and file paths given for the input and output files. To run, open a command prompt (Windows) or a terminal (Mac) and "cd" to the directory containing the executable. Then start the program with "./ParticleHeight" followed by arguments. The first argument is a required flag specifying the operation mode to be either help, setup, calibration or processing ("-h", "-s", "-c" or "-p"). A video file (8-bit grayscale .avi) of the experiment is also required along with a reference image of the speckle pattern either as the first frame of the video or in a separate video file with a single frame. When analyzing the videos from a new experiment, the commands should be used in roughly the following order:
 
 **Help - e.g. "./ParticleHeight -h"**
 
