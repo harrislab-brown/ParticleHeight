@@ -19,15 +19,25 @@ The help mode simply prints the usage message. The message is also printed if th
 
 **Setup - e.g. "./ParticleHeight -s 20 videos/videoFile.avi settings/settingsFile.txt"**
 
-The OpenCV GUI is used to interactively configure the image processing settings. The number of video frames to be displayed for setup can be optionally set after the "-s" flag. A video file and a text file to save the settings must be specified. A window will open to display the video frame which can be resized with the up/down arrow keys. The left and right keys can be used to traverse the video frames. The command line will display the various image processing steps and the keys which toggle those processing steps on or off for visualization. Another window will open with sliders for adjusting the processing parameters. If the specified settings text file already exists and is valid, it will be loaded and used for the default slider positions. Once the parameters have been adjusted as desired, pressing "q" will close the GUI windows and give the option to save the settings.
+The OpenCV GUI is used to interactively configure the image processing settings. The number of video frames to be displayed for setup can be optionally set after the "-s" flag. A video file and a text file to save the settings must be specified. A window will open to display the video frame which can be resized with the 'w'/'s' keys. The 'a' and 'd' keys can be used to traverse the video frames. The following keys can be used to toggle the various processing steps on or off: 
+
+'b' - background subtraction
+'n' - noise filtering
+'m' - morphological operations
+'c' - circle detection
+'f' - particle height finding
+'r' - switch between analytical or numerical refraction model for single particles
+'h' - switch between Hough Circle Transform or Euclidean Distance Transform to find circles
+
+Another window will open with sliders for adjusting the processing parameters. If the specified settings text file already exists and is valid, it will be loaded and used for the default slider positions. Once the parameters have been adjusted as desired, pressing 'q' will close the GUI windows and give the option to save the settings. The name/value pairs in the settings file can also be adjusted manually if desired.
 
 **Calibration** **- e.g. "./ParticleHeight -c 1.75 2.0 2.25 2.5 videos/videoFile.avi settings/settingsFile.txt"**
 
-Next we use calibration mode to calibrate the refraction indices of the various media given a list of known particle heights and a video of a single particle at those heights (e.g. using a translation stage). Several trials can be concatenated together in the video as long as they all start with a reference image followed by the known height images in the same quantity and order as the provided height list. Before running the calibration, it is a good idea to manually adjust some settings in the settings file as these cannot be inferred in the setup mode (such as the DIC region size, the actual particle size, the px to mm conversion and optimizer settings). When performing the calibration, the program will attempt to adjust the refraction indices in order to minimize the error between the detected particle heights and the given height list. Once the optimization is complete, the optical parameters can be saved to the settings file.
+Next we use calibration mode to calibrate the refraction indices of the various media given a list of known particle heights and a video of a single particle at those heights (e.g. using a translation stage). Several trials can be concatenated together in the video as long as they all start with a reference image followed by the known height images in the same quantity and order as the provided height list. Before running the calibration, it is a good idea to manually adjust some settings in the settings file as these cannot be inferred in the setup mode (such as the correlation region size, the actual particle size, the px to mm conversion and optimizer settings). When performing the calibration, the program will attempt to adjust the refraction indices in order to minimize the error between the detected particle heights and the given height list. Once the optimization is complete, the optical parameters can be saved to the settings file.
 
 **Process - e.g. "./ParticleHeight -p videos/videoFile.avi settings/settingsFile.txt output/results.csv output/resultVideo.avi"**
 
-Finally, we can process all the frames of the video using our adjusted settings and save the particle positions to a csv file. There is also the option to save a results video illustrating the DIC process which can be useful to ensure all the particles are found correctly.
+Finally, we can process all the frames of the video using our adjusted settings and save the particle positions to a csv file. There is also the option to save a binarized video in order to visualize the particles.
 
 ## 3D tracking details
 <p align="center">
