@@ -2,7 +2,7 @@
 Refraction-based single-camera 3D particle tracking
 
 ## Introduction
-This code complements the article at [https://arxiv.org/abs/2302.10380](https://arxiv.org/abs/2302.10380). It is used to reconstruct the 3D positions of transparent spherical particles suspended in a channel flow based on images of these particles with a speckle pattern in the background. The optical distortion of the pattern as it is imaged through the particles essentially encodes the out-of-plane particle position and enables 3D tracking with only a single camera.
+This code complements the article "Hydrodynamic irreversibility of non-Brownian suspensions in highly confined duct flow" at https://doi.org/10.1017/jfm.2023.793 ([https://arxiv.org/abs/2302.10380](https://arxiv.org/abs/2302.10380)). It is used to reconstruct the 3D positions of transparent spherical particles suspended in a channel flow based on images of these particles with a speckle pattern in the background. The optical distortion of the pattern as it is imaged through the particles essentially encodes the out-of-plane particle position and enables 3D tracking with only a single camera.
 
 Data sets of the particle trajectories associated with the experiments and simulations in the paper are also provided. Each row contains the frame number, position (in mm, following the coordinate system in the paper), position confidence value (for experiments, based on the cross-correlation with higher values indicating a closer match) and particle ID which links the trajectory between frames.
 
